@@ -9,16 +9,18 @@ const domNode = document.querySelector('#root');
 
 export const Modal = ({ onCloseModal, imageUrl, alt }) => {
   useEffect(() => {
+    const handleEsc = evt => {
+      if (evt.code === 'Escape') {
+        onCloseModal(evt);
+      }
+    };
+
     window.addEventListener('keydown', handleEsc);
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
   });
-  const handleEsc = evt => {
-    if (evt.code === 'Escape') {
-      onCloseModal();
-    }
-  };
+  
 
   return createPortal(
     <Overlay
