@@ -13,9 +13,9 @@ import {
 import { AiOutlineSearch as SearchIcon } from 'react-icons/ai';
 
 export const Searchbar = ({ onSubmit }) => {
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (values ) => {
     onSubmit(values.searchQuery);
-    resetForm();
+    //resetForm();
   };
   return (
     <Header>
