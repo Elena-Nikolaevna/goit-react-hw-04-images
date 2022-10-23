@@ -6,7 +6,7 @@ import { ImageGallery } from './ImageGallery/ImageGallery'; //+
 import  {Loader}  from './Loader/Loader'; //+
 import { Modal } from './Modal/Modal';
 import { GlobalStyle } from './GlobalStyles';
-import { Container } from './App.styled';
+import { Container, Text } from './App.styled';
 //import axios from 'axios';
 //import Notiflix from 'notiflix';
 
@@ -80,6 +80,7 @@ export const App = () => {
     <>
       <Container>
         <Searchbar onSubmit={onSearchHandle} />
+        {status === 'idle' && <Text>Enter your request please</Text>}
         {images.length !== 0 && (
           <ImageGallery images={images} onClick={onGalleryClickHandle} />
         )}
