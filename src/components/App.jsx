@@ -54,10 +54,13 @@ export const App = () => {
   }, [query, pageNumber]);
 
   const onSearchHandle = value => {
-    setQuery(value);
-    setPageNumber(1);
-    setImages([]);
-    setTotalPages(0);
+    if(query !== value) {
+      setQuery(value);
+      setPageNumber(1);
+      setImages([]);
+      setTotalPages(0);
+    }
+    
   };
 
   const onLoadMoreHandle = () => {
